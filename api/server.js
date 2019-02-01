@@ -13,4 +13,15 @@ server.get('/', async (req, res) => {
   });
 });
 
+server.get('/games', async (req, res) => {
+  const games = { name: 'SuperMario' };
+
+  res.status(200).json(games);
+});
+
+server.post('/games', async (req, res) => {
+  const { name } = req.body;
+
+  res.status(201).json({ name: `${name}` });
+});
 module.exports = server;
