@@ -14,14 +14,20 @@ server.get('/', async (req, res) => {
 });
 
 server.get('/games', async (req, res) => {
-  const games = { name: 'SuperMario' };
+  const games = { title: 'SuperMario', genre: 'Arcade', releaseYear: '1970' };
 
   res.status(200).json(games);
 });
 
 server.post('/games', async (req, res) => {
-  const { name } = req.body;
-
-  res.status(201).json({ name: `${name}` });
+  const { title, genre, releaseYear } = req.body;
+  if (!title || !genre) {
+    res.status(422).json({
+      message:
+        'Hey man, remember to put in a title AND a genre. releaseYear boolean is optional, but hey, put it in why doncha?'
+    });
+  } else {
+    res.status(201).json({ title: `${title}` });
+  }
 });
 module.exports = server;
