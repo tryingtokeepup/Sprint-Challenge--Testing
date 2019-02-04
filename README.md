@@ -25,8 +25,20 @@ In this challenge use `Test Driven Development` to build a RESTful API using Nod
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 1. In Jest, what are the differences between `describe()` and `it()` globals, and what are good uses for them?
+
+Describe is kind of how we break down your tests into components; for us who were reborn into the church of React and component-based engineering, it is a godsend, as we can basically use it to break down our tests into what particular component we are testing and why. The `it()` global is for those individual tests that we make to test the different little parts in our component, like buttons and labels and whatnot.
+
 1. What is the point of `Test Driven Development`? What do you think about this approach?
+
+This was probably the most controversial and important thing I learned in the whole backend section: TDD is hell, an evil, an absolute time-sink THAT IS UNAVOIDABLE AND NECESSARY AND THE ONLY WAY TO ACTUALLY BECOME A COMPETENT DEVELOPER. I think, personally, that when I can truely grasp all the fundamentals of testing AND am able to implement them in my projects consistently, I will graduate from junior to senior dev, and open my path up to being a project manager and (maybe!) even a tech lead. So much of TDD is learning to strategize and actually think through what you want your code to do, and then think about how the user will actually use your code, and how other developers will grapple with your code and how they will try to add to it. Put simply, testing is how you force us borderline autistic keyboard monkeys to think beyond one's self and try to figure out what you are actually doing. So many of us programmers are brilliant on our lonesome, but never can quite make the jump to working with others, and it's because they treat programming as their own fiefdom, their own domain. This mentality is so hard to break (I am still struggling with it), but testing kind of forces you to see your code in a different light, and when it works, it helps you feel so much more confident that you are putting out clean code.
+
 1. Mention three types of automated tests.
+
+There are unit tests, which are (in therory lol) easy to write, fast, and used to test components individually. I almost think of it like a spell-checker; it's what you are writing when you are checking if your div indeed is turning blue when you click the "turn div to blue" button. It's also really the only way to learn testing without shooting your head off. I am kind of sure that component testing is very similar to this, but on a slightly larger scale. (used for React, Vue, and other front-end frameworks)
+
+Then there is integration testing, which is A LOT more complicated, and what people usually think when they think of testing and the hell that they can bring. It's when you test how different units and components WORK WITH EACH OTHER. Conflicts arise a lot more than you would imagine; two units could be working perfectly well, but they have side-effects that absolutely make the user experience almost unbearable. Tons of bugs in the wild are actually not really bugs but unexpected conflicts of components doing what they were supposed to do but in the end reacting to each other in a way that becomes absolutely unsafe over time.
+
+The final type of test we got exposed to what snapshot testing, which is more of a sub-type of component testing. It is probably the most simple of the tests we learned: all it does is take a "snapshot" of the current state of a component, and if that component in ANY way changes in the future, the test will fail. Useful if you want to create little "checkpoints" (like in gaming) that you can reference in the future to see if your code inadventently changed over some span of time.
 
 ## Project Set Up
 
